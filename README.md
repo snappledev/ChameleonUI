@@ -5,15 +5,14 @@
 [![Platform](https://img.shields.io/badge/platform-Windows%2010%2B-0078D6)](https://www.microsoft.com/windows)
 
 <p align="center"> <img width="300" height="255" alt="Chameleon" src="https://github.com/user-attachments/assets/fb93197d-8f0d-4450-9c2d-64b8c468feca" /> </p>
-A high-performance, fully skinnable C++ UI framework built on Direct2D and DirectWrite. ChameleonUI runs as a **guest** inside any DirectX 11 host — give it a device and a swap chain, call three functions per frame, and you get a complete desktop-class UI with animation, localization, glassmorphism, and config persistence out of the box.
+A high-performance, fully skinnable C++ UI framework built on Direct2D and DirectWrite. 
+ChameleonUI runs inside any DirectX 11 host - give it a device and a swap chain, call three functions per frame, and you get a complete desktop-class UI with animation, localization, glassmorphism, and config persistence out of the box.
 
 
 
 
-
-
-<p align="center">
-  <iframe width="560" height="315" src="https://github.com/user-attachments/assets/e7543885-e208-43de-a86c-d4e9bfeb92c9" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p align="center" width="100%">
+<video src="https://github.com/user-attachments/assets/e7543885-e208-43de-a86c-d4e9bfeb92c9" width="80%" controls></video>
 </p>
 
 ---
