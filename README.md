@@ -12,7 +12,7 @@ ChameleonUI runs inside any DirectX 11 host - give it a device and a swap chain,
 
 
 <p align="center" width="100%">
-<video src="https://github.com/user-attachments/assets/e7543885-e208-43de-a86c-d4e9bfeb92c9" width="80%" controls></video>
+<video align="center" src="https://github.com/user-attachments/assets/e7543885-e208-43de-a86c-d4e9bfeb92c9" width="80%" controls></video>
 </p>
 
 ---
