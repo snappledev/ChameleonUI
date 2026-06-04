@@ -28,8 +28,8 @@ ChameleonUI runs inside any DirectX 11 host - give it a device and a swap chain,
   - [DX11 Guest Model](#dx11-guest-model)
   - [Lifecycle](#lifecycle)
 - [Skinning System](#skinning-system)
-  - [Tier 1 — UIStyle (data-driven)](#tier-1--uistyle-data-driven)
-  - [Tier 2 — Skin inheritance (structural)](#tier-2--skin-inheritance-structural)
+  - [Tier 1 - UIStyle (data-driven)](#tier-1--uistyle-data-driven)
+  - [Tier 2 - Skin inheritance (structural)](#tier-2--skin-inheritance-structural)
   - [Per-widget overrides](#per-widget-overrides)
   - [Built-in skins](#built-in-skins)
 - [Control Reference](#control-reference)
@@ -48,15 +48,15 @@ ChameleonUI runs inside any DirectX 11 host - give it a device and a swap chain,
 
 ## Key Features
 
-- **Zero-allocation immediate-style API** — declare your entire UI in one `BuildUI()` override using chainable `Props()` builders
-- **Complete control suite** — 20+ controls: Window, Button, Checkbox, Slider, ComboBox, TextInput, KeyBind, ListBox, NumericInput, ColorPicker, ColorSwatch, TabControl, GroupBox, GridLayout, Panel, Separator, Image, ContentSwitcher, Label, ConfigSelector
-- **Deep skinning system** — swap visual identities by returning a different `Skin` subclass; tweak ~120 colors/sizes via `UIStyle`; override individual `Draw*()` methods for custom rendering; per-widget `.UseSkin()` overrides
-- **Built-in animation engine** — hover, press, focus, and toggle transitions on every control with configurable easing (Linear, QuadOut, CubicOut, ExpoOut, BackOut, ElasticOut, SmoothStep, OvershootOut)
-- **Glassmorphism** — real-time desktop capture and Gaussian blur behind UI windows via DXGI Output Duplication
-- **Icon atlas system** — Python tooling generates embedded C++ sprite atlases from SVG or PNG folders; named icon lookup
-- **Localization** — compile-time language packs with live switching that rebuilds the UI tree while preserving state
-- **Configuration persistence** — automatic save/load to `%APPDATA%` with named config profiles and a built-in profile selector widget
-- **Self-contained** — single `Initialize()` call; creates D2D/DWrite internally from your D3D11 device
+- **Zero-allocation immediate-style API** - declare your entire UI in one `BuildUI()` override using chainable `Props()` builders
+- **Complete control suite** - 20+ controls: Window, Button, Checkbox, Slider, ComboBox, TextInput, KeyBind, ListBox, NumericInput, ColorPicker, ColorSwatch, TabControl, GroupBox, GridLayout, Panel, Separator, Image, ContentSwitcher, Label, ConfigSelector
+- **Deep skinning system** - swap visual identities by returning a different `Skin` subclass; tweak ~120 colors/sizes via `UIStyle`; override individual `Draw*()` methods for custom rendering; per-widget `.UseSkin()` overrides
+- **Built-in animation engine** - hover, press, focus, and toggle transitions on every control with configurable easing (Linear, QuadOut, CubicOut, ExpoOut, BackOut, ElasticOut, SmoothStep, OvershootOut)
+- **Glassmorphism** - real-time desktop capture and Gaussian blur behind UI windows via DXGI Output Duplication
+- **Icon atlas system** - Python tooling generates embedded C++ sprite atlases from SVG or PNG folders; named icon lookup
+- **Localization** - compile-time language packs with live switching that rebuilds the UI tree while preserving state
+- **Configuration persistence** - automatic save/load to `%APPDATA%` with named config profiles and a built-in profile selector widget
+- **Self-contained** - single `Initialize()` call; creates D2D/DWrite internally from your D3D11 device
 
 ---
 
@@ -74,14 +74,14 @@ ChameleonUI runs inside any DirectX 11 host - give it a device and a swap chain,
 
 1. Clone the repository
 2. Open the solution in Visual Studio 2022
-3. Build — all dependencies are system-provided (DirectX, DComp)
+3. Build - all dependencies are system-provided (DirectX, DComp)
 
 The framework links against:
-- `d3d11.lib` — Direct3D 11
-- `dxgi.lib` — DXGI (swap chains, desktop duplication)
-- `d2d1.lib` — Direct2D rendering
-- `dwrite.lib` — DirectWrite text
-- `dcomp.lib` — DirectComposition (transparent overlays)
+- `d3d11.lib` - Direct3D 11
+- `dxgi.lib` - DXGI (swap chains, desktop duplication)
+- `d2d1.lib` - Direct2D rendering
+- `dwrite.lib` - DirectWrite text
+- `dcomp.lib` - DirectComposition (transparent overlays)
 
 ### Minimal Example
 
@@ -133,7 +133,7 @@ protected:
 ```cpp
 MyApp g_ui;
 
-// one-time setup — pass your D3D11 device and swap chain
+// one-time setup - pass your D3D11 device and swap chain
 g_ui.Initialize(hwnd, d3dDevice, swapChain);
 
 // per frame
@@ -197,7 +197,7 @@ ChameleonUI never creates D3D devices, swap chains, or windows. It accepts **you
 
 ChameleonUI provides two complementary tiers of customization.
 
-### Tier 1 — UIStyle (data-driven)
+### Tier 1 - UIStyle (data-driven)
 
 The `UIStyle` struct contains ~120 color, size, font, and animation parameters. Override `CreateDefaultStyle()` in your `Skin` subclass to set them:
 
@@ -220,7 +220,7 @@ protected:
 };
 ```
 
-### Tier 2 — Skin inheritance (structural)
+### Tier 2 - Skin inheritance (structural)
 
 Override individual `Draw*()` methods for fundamentally different rendering:
 
@@ -321,7 +321,7 @@ AddCheckbox(Props().Text(L"Retro").UseSkin(myAltSkin));
 
 ## Props Builder Reference
 
-Every `Add*()` call accepts a `Props()` builder object. `UIProps` is a chainable struct — call setters in any order, ending with the control-specific parameters.
+Every `Add*()` call accepts a `Props()` builder object. `UIProps` is a chainable struct - call setters in any order, ending with the control-specific parameters.
 
 ```cpp
 // props() is a free function returning UIProps{}
@@ -388,7 +388,7 @@ All bound values are automatically saved/loaded via the config system when regis
 | `ButtonSize(int)` | px | Per-tab button size along the strip axis |
 | `Transition(TabTransition)` | `SlideHorizontal`, `SlideVertical`, `Fade` | Page switch animation |
 | `TabScrollbar(TabScrollbarPosition)` | `Top`, `Bottom`, `Auto` | Scrollbar position for overflowing tabs |
-| `Detached(bool=true)` | bool | TabPageHost mode — the tab strip floats independently |
+| `Detached(bool=true)` | bool | TabPageHost mode - the tab strip floats independently |
 | `StripFit(bool=true)` | bool | Shrink tab buttons to fit the available strip width |
 
 ### Icons
@@ -480,7 +480,7 @@ AddGrid(Props(), [&](GridLayout& grid)
 
 ### Nesting
 
-All containers support infinite nesting — put a grid inside a tab page inside a groupbox inside a window:
+All containers support infinite nesting - put a grid inside a tab page inside a groupbox inside a window:
 
 ```cpp
 AddWindow(...)
@@ -503,14 +503,14 @@ The `atlas_gen.py` script in `ChameleonUI/src/util/tools/` converts a folder of 
 
 ### Prerequisites
 
-- **Python 3** — no additional packages required
-- **Spreet** (SVG input) — [github.com/priteau/spreet](https://github.com/priteau/spreet)
-- **ImageMagick** (PNG input) — [imagemagick.org](https://imagemagick.org/script/download.php)
+- **Python 3** - no additional packages required
+- **Spreet** (SVG input) - [github.com/priteau/spreet](https://github.com/priteau/spreet)
+- **ImageMagick** (PNG input) - [imagemagick.org](https://imagemagick.org/script/download.php)
 
 ### Usage
 
 ```bash
-# basic — outputs icons.h in the input folder
+# basic - outputs icons.h in the input folder
 python atlas_gen.py /path/to/icon_folder
 
 # custom output name
@@ -522,15 +522,15 @@ python atlas_gen.py /path/to/icon_folder -o /custom/path.h --name GameIcons
 
 ### Input formats
 
-- **SVG** — Spreet auto-packs into an efficient sprite sheet
-- **PNG** — ImageMagick creates a grid atlas (configurable cell size and columns)
+- **SVG** - Spreet auto-packs into an efficient sprite sheet
+- **PNG** - ImageMagick creates a grid atlas (configurable cell size and columns)
 
 ### Output
 
 A single `.h` file containing:
-- `k<Name>_AtlasData[]` — embedded PNG binary
-- `k<Name>_AtlasDataSize` — byte size
-- `k<Name>[]` — `IconData` array mapping names to pixel coordinates/sizes
+- `k<Name>_AtlasData[]` - embedded PNG binary
+- `k<Name>_AtlasDataSize` - byte size
+- `k<Name>[]` - `IconData` array mapping names to pixel coordinates/sizes
 
 ### Registration
 
@@ -646,7 +646,7 @@ Desktop capture uses DXGI Output Duplication. The captured frame is Gaussian-blu
 
 ## License
 
-MIT — see [LICENSE](LICENSE) for full text.
+MIT - see [LICENSE](LICENSE) for full text.
 
 ---
 
