@@ -1,0 +1,17 @@
+# Ignore everything at repo root
+/*
+
+# Unignore the ChameleonUI project folder
+!/ChameleonUI/
+
+# Only keep these three subfolders (ignore .vcxproj, Debug, x64, etc.)
+/ChameleonUI/*
+!/ChameleonUI/examples/
+!/ChameleonUI/examples/**
+!/ChameleonUI/include/
+!/ChameleonUI/include/**
+!/ChameleonUI/src/
+!/ChameleonUI/src/**
+
+# Keep the gitignore itself
+!.gitignore
