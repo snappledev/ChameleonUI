@@ -86,10 +86,10 @@ The framework links against:
 ### Minimal Example
 
 ```cpp
-#include "include/core/UIManager.h"
+#include "include/core/ChameleonUI.h"
 #include "include/skins/DefaultSkin.h"
 
-class MyApp : public UIManager
+class MyApp : public ChameleonUI
 {
 public:
     std::unique_ptr<Skin> CreateSkin() override
