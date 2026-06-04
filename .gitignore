@@ -13,5 +13,6 @@
 !/ChameleonUI/src/
 !/ChameleonUI/src/**
 
-# Keep the gitignore itself
+# Keep the gitignore and license
 !.gitignore
+!/LICENSE
